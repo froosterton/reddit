@@ -27,8 +27,8 @@ RUN npm install
 # Copy application files
 COPY . .
 
-# Create non-root user
-RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
+# Create non-root user (use different UID if 1000 exists)
+RUN useradd -m appuser && chown -R appuser:appuser /app
 USER appuser
 
 # Expose port (Railway will set PORT env var)
