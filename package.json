@@ -1,0 +1,27 @@
+{
+  "name": "reddit-monitor-bot",
+  "version": "1.0.0",
+  "description": "Reddit trading monitor bot with OCR capabilities",
+  "main": "reddit_monitor_bot.js",
+  "scripts": {
+    "start": "node reddit_monitor_bot.js",
+    "dev": "node reddit_monitor_bot.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.15.0",
+    "axios": "^1.6.0",
+    "tesseract.js": "^4.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "reddit",
+    "bot",
+    "trading",
+    "ocr",
+    "monitoring"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
