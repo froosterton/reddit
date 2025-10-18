@@ -20,6 +20,11 @@ class RedditMonitorBot {
         // Set up Chrome options for cloud deployment
         const chromeOptions = new Options();
         
+        // Set binary path for system Chromium
+        if (this.isCloudEnvironment) {
+            chromeOptions.setChromeBinaryPath('/usr/bin/chromium');
+        }
+        
         if (this.isCloudEnvironment) {
             // Cloud-specific settings
             chromeOptions.addArguments('--headless');
@@ -31,9 +36,6 @@ class RedditMonitorBot {
             chromeOptions.addArguments('--window-size=1920,1080');
             chromeOptions.addArguments('--disable-extensions');
             chromeOptions.addArguments('--disable-plugins');
-            chromeOptions.addArguments('--disable-images');
-            chromeOptions.addArguments('--disable-javascript');
-            chromeOptions.addArguments('--disable-css');
         } else {
             // Local development settings
             chromeOptions.addArguments('--no-sandbox');
